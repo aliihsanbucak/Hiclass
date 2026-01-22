@@ -110,6 +110,7 @@
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#koleksiyon" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Koleksiyon</a>
                 <a href="#kumaskesfi" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Kumaşlar</a>
+                <a href="#bedenhesapla" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Bedenini Bul</a>
                 <a href="#hakkimizda" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Hakkımızda</a>
                 <a href="#iletisim" class="px-6 py-2 border border-hiclass-gold text-hiclass-gold hover:bg-hiclass-gold hover:text-black transition-all duration-300 uppercase text-xs tracking-widest font-semibold">İletişim</a>
             </div>
@@ -125,6 +126,7 @@
             </button>
             <a href="#koleksiyon" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">Koleksiyon</a>
             <a href="#kumaskesfi" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">Kumaşlar</a>
+            <a href="#bedenhesapla" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">Bedenini Bul</a>
             <a href="#hakkimizda" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">Hakkımızda</a>
             <a href="#iletisim" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">İletişim</a>
         </div>
@@ -303,6 +305,115 @@
         </div>
     </section>
 
+    <section id="bedenhesapla" class="py-24 bg-hiclass-black relative border-t border-gray-900">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-hiclass-gold uppercase tracking-[0.3em] text-xs font-bold">Size Guide</span>
+                <h2 class="text-3xl md:text-5xl font-serif text-white mt-4 mb-4">İdeal Bedenini Bul</h2>
+                <div class="w-24 h-1 bg-hiclass-gold mx-auto"></div>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto text-sm">Size en uygun hesaplama yöntemini seçin.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-gray-900/60 border border-gray-800 backdrop-blur-sm rounded-sm overflow-hidden">
+                
+                <div class="flex border-b border-gray-800">
+                    <button onclick="openTab('tab-genel')" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-hiclass-gold border-b-2 border-hiclass-gold bg-white/5 transition-all">
+                        Boy / Kilo
+                    </button>
+                    <button onclick="openTab('tab-ceket')" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-gray-500 hover:text-white border-b-2 border-transparent transition-all">
+                        Ceket Ölçüsü
+                    </button>
+                    <button onclick="openTab('tab-pantolon')" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-gray-500 hover:text-white border-b-2 border-transparent transition-all">
+                        Pantolon Ölçüsü
+                    </button>
+                </div>
+
+                <div class="p-8 md:p-12">
+                    
+                    <div id="tab-genel" class="tab-content block animate-fade-in-up">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Boyunuz (CM)</label>
+                                <input type="number" id="inputHeight" placeholder="Örn: 175" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors text-center font-serif text-xl">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Kilonuz (KG)</label>
+                                <input type="number" id="inputWeight" placeholder="Örn: 75" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors text-center font-serif text-xl">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button onclick="calculateGeneral()" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Hesapla</button>
+                        </div>
+                        <div id="resultGeneral" class="hidden mt-8 text-center border-t border-gray-800 pt-6">
+                            <p class="text-gray-400 text-sm uppercase">Önerilen Takım Elbise Bedeni</p>
+                            <h3 id="outGeneralSize" class="text-6xl font-serif text-hiclass-gold font-bold mt-2">48</h3>
+                        </div>
+                    </div>
+
+                    <div id="tab-ceket" class="tab-content hidden animate-fade-in-up">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Arka Orta Boy (cm)</label>
+                                <input type="number" id="jacketBack" placeholder="Örn: 73.5" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Kol Boyu (cm)</label>
+                                <input type="number" id="jacketArm" placeholder="Örn: 64" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Göğüs (cm)</label>
+                                <input type="number" id="jacketChest" placeholder="Örn: 46" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button onclick="calculateJacket()" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Ceket Bedenini Bul</button>
+                        </div>
+                        <div id="resultJacket" class="hidden mt-8 text-center border-t border-gray-800 pt-6">
+                            <p class="text-gray-400 text-sm uppercase">Ölçülerinize En Uygun Ceket Bedeni</p>
+                            <h3 id="outJacketSize" class="text-6xl font-serif text-hiclass-gold font-bold mt-2">50</h3>
+                            <p class="text-xs text-gray-500 mt-2">* N-CTIY kalıplarına göre hesaplanmıştır.</p>
+                        </div>
+                    </div>
+
+                    <div id="tab-pantolon" class="tab-content hidden animate-fade-in-up">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Bel (1/2) (cm)</label>
+                                <input type="number" id="pantWaist" placeholder="Örn: 44" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Paça (1/2) (cm)</label>
+                                <input type="number" id="pantHem" placeholder="Örn: 20" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Dış Boy (cm)</label>
+                                <input type="number" id="pantOutseam" placeholder="Örn: 108" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button onclick="calculatePant()" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Pantolon Bedenini Bul</button>
+                        </div>
+                        <div id="resultPant" class="hidden mt-8 text-center border-t border-gray-800 pt-6">
+                            <div class="flex justify-center gap-12">
+                                <div>
+                                    <p class="text-gray-400 text-xs uppercase">Pantolon Bedeni</p>
+                                    <h3 id="outPantSize" class="text-5xl font-serif text-hiclass-gold font-bold mt-2">42</h3>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-xs uppercase">Denk Gelen Ceket</p>
+                                    <h3 id="outPantJacketRef" class="text-5xl font-serif text-white font-bold mt-2">48</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="koleksiyon" class="py-24 bg-hiclass-gray">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
@@ -421,7 +532,7 @@
                 </div>
                 <div class="group gallery-item" data-category="summer">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.14.jpeg" alt="Sahara Beige Kısa Kollu Safari" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="1.21.jpeg" alt="Sahara Beige Kısa Kollu Safari" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Sahara Beige Kısa Kollu Safari</h3>
@@ -432,7 +543,7 @@
                 </div>
                 <div class="group gallery-item" data-category="summer">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.15.jpeg" alt="Latte Brown Yazlık Safari Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="1.22.jpeg" alt="Latte Brown Yazlık Safari Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Latte Brown Yazlık Safari Takım</h3>
@@ -443,7 +554,7 @@
                 </div>
                 <div class="group gallery-item" data-category="summer">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.16.jpeg" alt="Toscana Olive Kısa Kollu Ceket" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="1.23.jpeg" alt="Toscana Olive Kısa Kollu Ceket" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Toscana Olive Kısa Kollu Ceket</h3>
@@ -635,7 +746,6 @@
             'baskethopsack': {
                 src: "Basket Hopsack 2.jpeg",
                 title: 'Basket Hopsack',
-                // İstediğiniz gibi: <br> ile alt satıra geçildi, <b> ile kalınlaştırıldı.
                 desc: '<b>İçerik:</b> %55 Polyester (Dayanıklılık), %40 Viskon (Yumuşaklık ve parlaklık), %5 Elastan (Esneklik).<br><br><b>Görünüm:</b> Kendinden desenli olduğu için hem spor hem klasik kombinlenebilir. Düz renk olsa bile üzerindeki doku sayesinde "zengin" durur.<br><br><b>Gramaj (190 gr/m²):</b> İnce ve hafiftir. Tam bir yazlık ceket (Blazer) veya Gömlek-Ceket kumaşıdır.'
             },
             'chino': {
@@ -676,7 +786,6 @@
         };
 
         function changeTexture(type) {
-            const container = document.getElementById('main-texture-container');
             const img = document.getElementById('main-texture-img');
             const title = document.getElementById('texture-title');
             const desc = document.getElementById('texture-desc');
@@ -723,6 +832,147 @@
                     item.style.opacity = '0';
                 }
             });
+        }
+
+        // --- 3 MODLU BEDEN HESAPLAYICI ---
+
+        // TAB GEÇİŞ FONKSİYONU
+        function openTab(tabName) {
+            // 1. Tüm içerikleri gizle
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+            
+            // 2. Seçilen içeriği göster
+            document.getElementById(tabName).classList.remove('hidden');
+
+            // 3. Buton stillerini güncelle
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('text-hiclass-gold', 'border-hiclass-gold', 'bg-white/5');
+                btn.classList.add('text-gray-500', 'border-transparent');
+            });
+
+            // Tıklanan butonu aktif yap (Event target ile buluyoruz)
+            event.currentTarget.classList.remove('text-gray-500', 'border-transparent');
+            event.currentTarget.classList.add('text-hiclass-gold', 'border-hiclass-gold', 'bg-white/5');
+        }
+
+        // VERİ TABLOLARI (Görselden alınan veriler)
+        
+        // 1. Matris (Boy/Kilo)
+        const sizeMatrix = [
+            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60], // 165
+            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60], // 170
+            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60], // 175
+            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60], // 180
+            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58], // 185
+            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58], // 190
+            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58], // 195
+            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58]  // 200
+        ];
+        const heightSteps = [165, 170, 175, 180, 185, 190, 195, 200];
+        const weightSteps = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115];
+
+        // 2. Ceket Verileri (N-CTIY)
+        const jacketData = [
+            { size: 46, back: 72.5, arm: 63, chest: 44 },
+            { size: 48, back: 73.5, arm: 64, chest: 46 },
+            { size: 50, back: 74.5, arm: 65, chest: 48 },
+            { size: 52, back: 75.5, arm: 66, chest: 50 },
+            { size: 54, back: 76.5, arm: 67, chest: 52 },
+            { size: 56, back: 77,   arm: 67.5, chest: 54 },
+            { size: 58, back: 77.5, arm: 68, chest: 56 }
+        ];
+
+        // 3. Pantolon Verileri
+        const pantData = [
+            { jacketSize: 46, pantSize: 40, waist: 42, hem: 19.5, outseam: 107.5 },
+            { jacketSize: 48, pantSize: 42, waist: 44, hem: 20,   outseam: 108 },
+            { jacketSize: 50, pantSize: 44, waist: 46, hem: 20.5, outseam: 108.5 },
+            { jacketSize: 52, pantSize: 46, waist: 48, hem: 21,   outseam: 109 },
+            { jacketSize: 54, pantSize: 48, waist: 50, hem: 21.5, outseam: 109.5 },
+            { jacketSize: 56, pantSize: 50, waist: 52, hem: 21.5, outseam: 110 },
+            { jacketSize: 58, pantSize: 52, waist: 54, hem: 21.5, outseam: 110.5 }
+        ];
+
+        // HESAPLAMA FONKSİYONLARI
+
+        // 1. Genel (Boy/Kilo) Hesaplama
+        function calculateGeneral() {
+            const h = parseFloat(document.getElementById('inputHeight').value);
+            const w = parseFloat(document.getElementById('inputWeight').value);
+            
+            if(!h || !w) return alert("Lütfen boy ve kilonuzu giriniz.");
+
+            let hIndex = 0, minH = Infinity;
+            heightSteps.forEach((val, idx) => {
+                let diff = Math.abs(h - val);
+                if(diff < minH) { minH = diff; hIndex = idx; }
+            });
+
+            let wIndex = 0, minW = Infinity;
+            weightSteps.forEach((val, idx) => {
+                let diff = Math.abs(w - val);
+                if(diff < minW) { minW = diff; wIndex = idx; }
+            });
+
+            const result = sizeMatrix[hIndex][wIndex];
+            document.getElementById('outGeneralSize').innerText = result;
+            document.getElementById('resultGeneral').classList.remove('hidden');
+        }
+
+        // 2. Ceket Hesaplama (En Yakın Değeri Bulma Algoritması)
+        function calculateJacket() {
+            const back = parseFloat(document.getElementById('jacketBack').value);
+            const arm = parseFloat(document.getElementById('jacketArm').value);
+            const chest = parseFloat(document.getElementById('jacketChest').value);
+
+            if(!back || !arm || !chest) return alert("Lütfen tüm ceket ölçülerini giriniz.");
+
+            let bestSize = 46;
+            let minError = Infinity;
+
+            jacketData.forEach(item => {
+                // Her bedenin verileriyle girilen veriler arasındaki farkı topluyoruz (Mutlak Değer)
+                // Göğüs ölçüsü (chest) fit için daha önemli olduğu için onu 2 ile çarpıp ağırlıklandırıyoruz.
+                const error = Math.abs(item.back - back) + Math.abs(item.arm - arm) + (Math.abs(item.chest - chest) * 1.5);
+                
+                if (error < minError) {
+                    minError = error;
+                    bestSize = item.size;
+                }
+            });
+
+            document.getElementById('outJacketSize').innerText = bestSize;
+            document.getElementById('resultJacket').classList.remove('hidden');
+        }
+
+        // 3. Pantolon Hesaplama
+        function calculatePant() {
+            const waist = parseFloat(document.getElementById('pantWaist').value);
+            const hem = parseFloat(document.getElementById('pantHem').value);
+            const outseam = parseFloat(document.getElementById('pantOutseam').value);
+
+            if(!waist || !hem || !outseam) return alert("Lütfen tüm pantolon ölçülerini giriniz.");
+
+            let bestPantSize = 40;
+            let jacketRef = 46;
+            let minError = Infinity;
+
+            pantData.forEach(item => {
+                // Bel ölçüsü (waist) en kritik ölçü olduğu için 2 ile çarpıp ağırlık veriyoruz.
+                const error = (Math.abs(item.waist - waist) * 2) + Math.abs(item.hem - hem) + Math.abs(item.outseam - outseam);
+                
+                if (error < minError) {
+                    minError = error;
+                    bestPantSize = item.pantSize;
+                    jacketRef = item.jacketSize;
+                }
+            });
+
+            document.getElementById('outPantSize').innerText = bestPantSize;
+            document.getElementById('outPantJacketRef').innerText = jacketRef;
+            document.getElementById('resultPant').classList.remove('hidden');
         }
     </script>
 </body>
