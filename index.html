@@ -54,7 +54,6 @@
         }
     </script>
     <style>
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
@@ -73,7 +72,6 @@
         html { scroll-behavior: smooth; }
         .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
         
-        /* Loader */
         .loader-overlay {
             position: fixed; inset: 0; background: #000; z-index: 100;
             display: flex; justify-content: center; align-items: center;
@@ -108,11 +106,16 @@
             </a>
             
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#koleksiyon" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Koleksiyon</a>
-                <a href="#kumaskesfi" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Kumaşlar</a>
-                <a href="#bedenhesapla" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Bedenini Bul</a>
-                <a href="#hakkimizda" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Hakkımızda</a>
-                <a href="#iletisim" class="px-6 py-2 border border-hiclass-gold text-hiclass-gold hover:bg-hiclass-gold hover:text-black transition-all duration-300 uppercase text-xs tracking-widest font-semibold">İletişim</a>
+                <a href="#koleksiyon" data-lang="nav_collection" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Koleksiyon</a>
+                <a href="#kumaskesfi" data-lang="nav_fabrics" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Kumaşlar</a>
+                <a href="#bedenhesapla" data-lang="nav_size" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Bedenini Bul</a>
+                <a href="#hakkimizda" data-lang="nav_about" class="text-sm uppercase tracking-widest hover:text-hiclass-gold transition-colors duration-300">Hakkımızda</a>
+                <a href="#iletisim" data-lang="nav_contact" class="px-6 py-2 border border-hiclass-gold text-hiclass-gold hover:bg-hiclass-gold hover:text-black transition-all duration-300 uppercase text-xs tracking-widest font-semibold">İletişim</a>
+                
+                <button onclick="toggleLanguage()" class="flex items-center gap-1 text-xs font-bold tracking-widest text-white border border-gray-600 px-3 py-1 hover:border-hiclass-gold hover:text-hiclass-gold transition-all">
+                    <span class="lang-text">EN</span>
+                    <span class="material-symbols-outlined text-sm">language</span>
+                </button>
             </div>
 
             <button onclick="toggleMobileMenu()" class="md:hidden text-white">
@@ -124,11 +127,15 @@
             <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-white">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
-            <a href="#koleksiyon" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">Koleksiyon</a>
-            <a href="#kumaskesfi" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">Kumaşlar</a>
-            <a href="#bedenhesapla" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">Bedenini Bul</a>
-            <a href="#hakkimizda" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">Hakkımızda</a>
-            <a href="#iletisim" onclick="toggleMobileMenu()" class="text-2xl font-serif text-hiclass-gold">İletişim</a>
+            <a href="#koleksiyon" onclick="toggleMobileMenu()" data-lang="nav_collection" class="text-2xl font-serif text-hiclass-gold">Koleksiyon</a>
+            <a href="#kumaskesfi" onclick="toggleMobileMenu()" data-lang="nav_fabrics" class="text-2xl font-serif text-hiclass-gold">Kumaşlar</a>
+            <a href="#bedenhesapla" onclick="toggleMobileMenu()" data-lang="nav_size" class="text-2xl font-serif text-hiclass-gold">Bedenini Bul</a>
+            <a href="#hakkimizda" onclick="toggleMobileMenu()" data-lang="nav_about" class="text-2xl font-serif text-hiclass-gold">Hakkımızda</a>
+            <a href="#iletisim" onclick="toggleMobileMenu()" data-lang="nav_contact" class="text-2xl font-serif text-hiclass-gold">İletişim</a>
+            <button onclick="toggleLanguage()" class="flex items-center gap-2 text-xl font-bold tracking-widest text-white border border-gray-600 px-6 py-2 mt-4 hover:border-hiclass-gold hover:text-hiclass-gold transition-all">
+                <span class="lang-text">English Version</span>
+                <span class="material-symbols-outlined">language</span>
+            </button>
         </div>
     </nav>
 
@@ -142,20 +149,20 @@
             <div class="inline-block mb-6 animate-float">
                 <span class="material-symbols-outlined text-6xl text-hiclass-gold opacity-80">diamond</span>
             </div>
-            <h2 class="text-hiclass-gold text-sm md:text-base uppercase tracking-[0.5em] mb-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">Exclusive Men's Wear</h2>
+            <h2 data-lang="hero_subtitle" class="text-hiclass-gold text-sm md:text-base uppercase tracking-[0.5em] mb-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">Exclusive Men's Wear</h2>
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 leading-tight opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
-                Zarafetin <span class="text-gold-gradient italic">Dokusu</span>
+                <span data-lang="hero_title_1">Zarafetin</span> <span data-lang="hero_title_2" class="text-gold-gradient italic">Dokusu</span>
             </h1>
-            <p class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
+            <p data-lang="hero_desc" class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
                 X-Hiclass Tekstil ile kaliteyi teninizde hissedin. Modern çizgiler, geleneksel ustalık ve altın dokunuşlar.
             </p>
             <div class="flex flex-col md:flex-row gap-6 justify-center items-center opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
                 <a href="#koleksiyon" class="group relative px-8 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest overflow-hidden">
-                    <span class="relative z-10">Koleksiyonu Keşfet</span>
+                    <span data-lang="btn_discover" class="relative z-10">Koleksiyonu Keşfet</span>
                     <div class="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0 opacity-30"></div>
                 </a>
                 <a href="#hakkimizda" class="group flex items-center gap-2 text-white uppercase tracking-widest text-sm hover:text-hiclass-gold transition-colors">
-                    <span class="border-b border-transparent group-hover:border-hiclass-gold pb-1 transition-all">Hikayemiz</span>
+                    <span data-lang="btn_story" class="border-b border-transparent group-hover:border-hiclass-gold pb-1 transition-all">Hikayemiz</span>
                     <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
             </div>
@@ -174,33 +181,33 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-8">
                     <div class="border-l-4 border-hiclass-gold pl-6">
-                        <h3 class="text-hiclass-gold uppercase tracking-[0.2em] mb-2 text-sm font-semibold">Hakkımızda</h3>
-                        <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">Mükemmelliği<br>İlmek İlmek İşliyoruz</h2>
+                        <h3 data-lang="about_small" class="text-hiclass-gold uppercase tracking-[0.2em] mb-2 text-sm font-semibold">Hakkımızda</h3>
+                        <h2 data-lang="about_title" class="text-4xl md:text-5xl font-serif text-white leading-tight">Mükemmelliği<br>İlmek İlmek İşliyoruz</h2>
                     </div>
-                    <p class="text-gray-400 leading-relaxed font-light text-lg">
+                    <p data-lang="about_text" class="text-gray-400 leading-relaxed font-light text-lg">
                         X-Hiclass Tekstil olarak, sadece kumaş üretmiyor, bir yaşam tarzı tasarlıyoruz. İstanbul'un kalbindeki atölyemizde, geleneksel terzilik sanatını modern teknolojiyle buluşturuyoruz. Siyahın asaleti ve altının ihtişamıyla bezenmiş özel koleksiyonlarımız, stil sahibi beyefendiler için özenle hazırlanıyor.
                     </p>
                     <ul class="space-y-4 mt-4">
                         <li class="flex items-center gap-4">
                             <span class="material-symbols-outlined text-hiclass-gold">check_circle</span>
-                            <span class="text-gray-300">Birinci sınıf İtalyan ve yerli kumaşlar</span>
+                            <span data-lang="about_list_1" class="text-gray-300">Birinci sınıf İtalyan ve yerli kumaşlar</span>
                         </li>
                         <li class="flex items-center gap-4">
                             <span class="material-symbols-outlined text-hiclass-gold">check_circle</span>
-                            <span class="text-gray-300">Kişiye özel ölçü ve tasarım seçenekleri</span>
+                            <span data-lang="about_list_2" class="text-gray-300">Kişiye özel ölçü ve tasarım seçenekleri</span>
                         </li>
                         <li class="flex items-center gap-4">
                             <span class="material-symbols-outlined text-hiclass-gold">check_circle</span>
-                            <span class="text-gray-300">Usta el işçiliği ve detaylara verilen önem</span>
+                            <span data-lang="about_list_3" class="text-gray-300">Usta el işçiliği ve detaylara verilen önem</span>
                         </li>
                     </ul>
                 </div>
                 <div class="relative h-[600px] w-full group perspective">
                     <div class="absolute inset-0 bg-hiclass-gold transform translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
                     <img src="HİCLASS2.png" alt="Ustalık" class="absolute inset-0 w-full h-full object-cover shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-10 -left-10 bg-black p-6 border border-hiclass-gold/30 shadow-xl hidden md:block">
-                        <p class="text-hiclass-gold font-serif text-4xl font-bold">10+</p>
-                        <p class="text-gray-400 text-xs uppercase tracking-widest mt-1">Yıllık Tecrübe</p>
+                    <div class="absolute bottom-0 left-0 m-4 md:m-0 md:bottom-10 md:-left-10 bg-black p-4 md:p-6 border border-hiclass-gold/30 shadow-xl z-20">
+                        <p class="text-hiclass-gold font-serif text-3xl md:text-4xl font-bold">10+</p>
+                        <p data-lang="years_exp" class="text-gray-400 text-[10px] md:text-xs uppercase tracking-widest mt-1">Yıllık Tecrübe</p>
                     </div>
                 </div>
             </div>
@@ -210,8 +217,8 @@
     <section id="kumaskesfi" class="py-12 md:py-24 bg-black relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-8 md:mb-16">
-                <span class="text-hiclass-gold uppercase tracking-[0.3em] text-xs font-bold">Materyal</span>
-                <h2 class="text-3xl md:text-5xl font-serif text-white mt-4 mb-4">Kumaşın Hissiyatı</h2>
+                <span data-lang="fabric_small" class="text-hiclass-gold uppercase tracking-[0.3em] text-xs font-bold">Materyal</span>
+                <h2 data-lang="fabric_title" class="text-3xl md:text-5xl font-serif text-white mt-4 mb-4">Kumaşın Hissiyatı</h2>
                 <div class="w-24 h-1 bg-hiclass-gold mx-auto"></div>
             </div>
 
@@ -298,7 +305,7 @@
                     </div>
                     <div class="absolute top-4 right-4 bg-black/50 backdrop-blur px-3 py-1 rounded-full border border-gray-700 flex items-center gap-2">
                         <span class="material-symbols-outlined text-sm text-hiclass-gold">touch_app</span>
-                        <span class="text-xs text-gray-300">Seçim yapın</span>
+                        <span data-lang="hint_select" class="text-xs text-gray-300">Seçim yapın</span>
                     </div>
                 </div>
             </div>
@@ -310,22 +317,22 @@
         
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-12">
-                <span class="text-hiclass-gold uppercase tracking-[0.3em] text-xs font-bold">Size Guide</span>
-                <h2 class="text-3xl md:text-5xl font-serif text-white mt-4 mb-4">İdeal Bedenini Bul</h2>
+                <span data-lang="calc_small" class="text-hiclass-gold uppercase tracking-[0.3em] text-xs font-bold">Size Guide</span>
+                <h2 data-lang="calc_title" class="text-3xl md:text-5xl font-serif text-white mt-4 mb-4">İdeal Bedenini Bul</h2>
                 <div class="w-24 h-1 bg-hiclass-gold mx-auto"></div>
-                <p class="text-gray-400 mt-4 max-w-xl mx-auto text-sm">Size en uygun hesaplama yöntemini seçin.</p>
+                <p data-lang="calc_desc" class="text-gray-400 mt-4 max-w-xl mx-auto text-sm">Size en uygun hesaplama yöntemini seçin.</p>
             </div>
 
             <div class="max-w-4xl mx-auto bg-gray-900/60 border border-gray-800 backdrop-blur-sm rounded-sm overflow-hidden">
                 
                 <div class="flex border-b border-gray-800">
-                    <button onclick="openTab('tab-genel')" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-hiclass-gold border-b-2 border-hiclass-gold bg-white/5 transition-all">
+                    <button onclick="openTab('tab-genel')" data-lang="tab_general" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-hiclass-gold border-b-2 border-hiclass-gold bg-white/5 transition-all">
                         Boy / Kilo
                     </button>
-                    <button onclick="openTab('tab-ceket')" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-gray-500 hover:text-white border-b-2 border-transparent transition-all">
+                    <button onclick="openTab('tab-ceket')" data-lang="tab_jacket" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-gray-500 hover:text-white border-b-2 border-transparent transition-all">
                         Ceket Ölçüsü
                     </button>
-                    <button onclick="openTab('tab-pantolon')" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-gray-500 hover:text-white border-b-2 border-transparent transition-all">
+                    <button onclick="openTab('tab-pantolon')" data-lang="tab_pant" class="tab-btn w-1/3 py-4 text-sm md:text-base font-serif uppercase tracking-widest text-gray-500 hover:text-white border-b-2 border-transparent transition-all">
                         Pantolon Ölçüsü
                     </button>
                 </div>
@@ -335,19 +342,19 @@
                     <div id="tab-genel" class="tab-content block animate-fade-in-up">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <div class="space-y-2">
-                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Boyunuz (CM)</label>
-                                <input type="number" id="inputHeight" placeholder="Örn: 175" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors text-center font-serif text-xl">
+                                <label data-lang="lbl_height" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Boyunuz (CM)</label>
+                                <input type="number" id="inputHeight" data-lang="ph_height" placeholder="Örn: 175" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors text-center font-serif text-xl">
                             </div>
                             <div class="space-y-2">
-                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Kilonuz (KG)</label>
-                                <input type="number" id="inputWeight" placeholder="Örn: 75" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors text-center font-serif text-xl">
+                                <label data-lang="lbl_weight" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Kilonuz (KG)</label>
+                                <input type="number" id="inputWeight" data-lang="ph_weight" placeholder="Örn: 75" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors text-center font-serif text-xl">
                             </div>
                         </div>
                         <div class="text-center">
-                            <button onclick="calculateGeneral()" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Hesapla</button>
+                            <button onclick="calculateGeneral()" data-lang="btn_calc" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Hesapla</button>
                         </div>
                         <div id="resultGeneral" class="hidden mt-8 text-center border-t border-gray-800 pt-6">
-                            <p class="text-gray-400 text-sm uppercase">Önerilen Takım Elbise Bedeni</p>
+                            <p data-lang="res_suit_size" class="text-gray-400 text-sm uppercase">Önerilen Takım Elbise Bedeni</p>
                             <h3 id="outGeneralSize" class="text-6xl font-serif text-hiclass-gold font-bold mt-2">48</h3>
                         </div>
                     </div>
@@ -355,54 +362,54 @@
                     <div id="tab-ceket" class="tab-content hidden animate-fade-in-up">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                             <div class="space-y-2">
-                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Arka Orta Boy (cm)</label>
-                                <input type="number" id="jacketBack" placeholder="Örn: 73.5" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                                <label data-lang="lbl_back" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Arka Orta Boy (cm)</label>
+                                <input type="number" id="jacketBack" data-lang="ph_ex" placeholder="Örn: 73.5" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
                             </div>
                             <div class="space-y-2">
-                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Kol Boyu (cm)</label>
-                                <input type="number" id="jacketArm" placeholder="Örn: 64" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                                <label data-lang="lbl_arm" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Kol Boyu (cm)</label>
+                                <input type="number" id="jacketArm" data-lang="ph_ex2" placeholder="Örn: 64" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
                             </div>
                             <div class="space-y-2">
-                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Göğüs (cm)</label>
-                                <input type="number" id="jacketChest" placeholder="Örn: 46" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                                <label data-lang="lbl_chest" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Göğüs (cm)</label>
+                                <input type="number" id="jacketChest" data-lang="ph_ex3" placeholder="Örn: 46" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
                             </div>
                         </div>
                         <div class="text-center">
-                            <button onclick="calculateJacket()" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Ceket Bedenini Bul</button>
+                            <button onclick="calculateJacket()" data-lang="btn_calc_jacket" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Ceket Bedenini Bul</button>
                         </div>
                         <div id="resultJacket" class="hidden mt-8 text-center border-t border-gray-800 pt-6">
-                            <p class="text-gray-400 text-sm uppercase">Ölçülerinize En Uygun Ceket Bedeni</p>
+                            <p data-lang="res_best_jacket" class="text-gray-400 text-sm uppercase">Ölçülerinize En Uygun Ceket Bedeni</p>
                             <h3 id="outJacketSize" class="text-6xl font-serif text-hiclass-gold font-bold mt-2">50</h3>
-                            <p class="text-xs text-gray-500 mt-2">* N-CTIY kalıplarına göre hesaplanmıştır.</p>
+                            <p data-lang="res_note_jacket" class="text-xs text-gray-500 mt-2">* N-CTIY kalıplarına göre hesaplanmıştır.</p>
                         </div>
                     </div>
 
                     <div id="tab-pantolon" class="tab-content hidden animate-fade-in-up">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                             <div class="space-y-2">
-                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Bel (1/2) (cm)</label>
-                                <input type="number" id="pantWaist" placeholder="Örn: 44" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                                <label data-lang="lbl_waist" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Bel (1/2) (cm)</label>
+                                <input type="number" id="pantWaist" data-lang="ph_ex4" placeholder="Örn: 44" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
                             </div>
                             <div class="space-y-2">
-                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Paça (1/2) (cm)</label>
-                                <input type="number" id="pantHem" placeholder="Örn: 20" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                                <label data-lang="lbl_hem" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Paça (1/2) (cm)</label>
+                                <input type="number" id="pantHem" data-lang="ph_ex5" placeholder="Örn: 20" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
                             </div>
                             <div class="space-y-2">
-                                <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Dış Boy (cm)</label>
-                                <input type="number" id="pantOutseam" placeholder="Örn: 108" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
+                                <label data-lang="lbl_outseam" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Dış Boy (cm)</label>
+                                <input type="number" id="pantOutseam" data-lang="ph_ex6" placeholder="Örn: 108" class="w-full bg-black border border-gray-700 p-3 text-white focus:border-hiclass-gold outline-none transition-colors text-center">
                             </div>
                         </div>
                         <div class="text-center">
-                            <button onclick="calculatePant()" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Pantolon Bedenini Bul</button>
+                            <button onclick="calculatePant()" data-lang="btn_calc_pant" class="px-10 py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 w-full md:w-auto">Pantolon Bedenini Bul</button>
                         </div>
                         <div id="resultPant" class="hidden mt-8 text-center border-t border-gray-800 pt-6">
                             <div class="flex justify-center gap-12">
                                 <div>
-                                    <p class="text-gray-400 text-xs uppercase">Pantolon Bedeni</p>
+                                    <p data-lang="res_pant_size" class="text-gray-400 text-xs uppercase">Pantolon Bedeni</p>
                                     <h3 id="outPantSize" class="text-5xl font-serif text-hiclass-gold font-bold mt-2">42</h3>
                                 </div>
                                 <div>
-                                    <p class="text-gray-400 text-xs uppercase">Denk Gelen Ceket</p>
+                                    <p data-lang="res_ref_jacket" class="text-gray-400 text-xs uppercase">Denk Gelen Ceket</p>
                                     <h3 id="outPantJacketRef" class="text-5xl font-serif text-white font-bold mt-2">48</h3>
                                 </div>
                             </div>
@@ -418,15 +425,15 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                 <div>
-                    <span class="text-hiclass-gold uppercase tracking-[0.3em] text-xs font-bold">Katalog</span>
-                    <h2 class="text-4xl md:text-5xl font-serif text-white mt-4">Özel Koleksiyonlar</h2>
+                    <span data-lang="cat_small" class="text-hiclass-gold uppercase tracking-[0.3em] text-xs font-bold">Katalog</span>
+                    <h2 data-lang="cat_title" class="text-4xl md:text-5xl font-serif text-white mt-4">Özel Koleksiyonlar</h2>
                 </div>
                 <div class="flex flex-wrap justify-center md:justify-end gap-2 md:gap-4 w-full md:w-auto">
-                    <button onclick="filterGallery('all', this)" class="active-filter px-4 md:px-6 py-2 border border-hiclass-gold text-hiclass-gold hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Tümü</button>
-                    <button onclick="filterGallery('safari', this)" class="px-4 md:px-6 py-2 border border-gray-700 text-gray-400 hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Safari Serisi</button>
-                    <button onclick="filterGallery('takim', this)" class="px-4 md:px-6 py-2 border border-gray-700 text-gray-400 hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Yelekli Takım</button>
-                    <button onclick="filterGallery('business', this)" class="px-4 md:px-6 py-2 border border-gray-700 text-gray-400 hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Business</button>
-                    <button onclick="filterGallery('summer', this)" class="px-4 md:px-6 py-2 border border-gray-700 text-gray-400 hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Summer</button>
+                    <button onclick="filterGallery('all', this)" data-lang="filter_all" class="active-filter px-4 md:px-6 py-2 border border-hiclass-gold text-hiclass-gold hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Tümü</button>
+                    <button onclick="filterGallery('safari', this)" data-lang="filter_safari" class="px-4 md:px-6 py-2 border border-gray-700 text-gray-400 hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Safari Serisi</button>
+                    <button onclick="filterGallery('takim', this)" data-lang="filter_suit" class="px-4 md:px-6 py-2 border border-gray-700 text-gray-400 hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Yelekli Takım</button>
+                    <button onclick="filterGallery('business', this)" data-lang="filter_business" class="px-4 md:px-6 py-2 border border-gray-700 text-gray-400 hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Business</button>
+                    <button onclick="filterGallery('summer', this)" data-lang="filter_summer" class="px-4 md:px-6 py-2 border border-gray-700 text-gray-400 hover:border-hiclass-gold hover:text-hiclass-gold transition-all uppercase text-[10px] md:text-xs tracking-widest">Summer</button>
                 </div>
             </div>
 
@@ -438,7 +445,7 @@
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Executive Black Trio Suit</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Otoritenin ve zamansız şıklığın zirvesi."</p>
+                            <p data-lang="prod_desc_1" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Otoritenin ve zamansız şıklığın zirvesi."</p>
                         </div>
                     </div>
                 </div>
@@ -449,18 +456,18 @@
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">İtalyan Pinstripe Takım</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Kruvaze kesimin heybeti, çizgilerin fit gösteren illüzyonu."</p>
+                            <p data-lang="prod_desc_2" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Kruvaze kesimin heybeti, çizgilerin fit gösteren illüzyonu."</p>
                         </div>
                     </div>
                 </div>
-                <div class="group gallery-item" data-category="business">
+                 <div class="group gallery-item" data-category="business">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
                         <img src="1.7.jpeg" alt="Executive Charcoal Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Executive Charcoal Takım</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Sözcüklerden daha güçlü bir duruş."</p>
+                            <p data-lang="prod_desc_3" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Sözcüklerden daha güçlü bir duruş."</p>
                         </div>
                     </div>
                 </div>
@@ -471,62 +478,62 @@
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Kemerli İtalyan Blazer</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Klasik şıklığın en sofistike ve modern yorumu."</p>
+                            <p data-lang="prod_desc_4" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Klasik şıklığın modern yorumu."</p>
                         </div>
                     </div>
                 </div>
-                <div class="group gallery-item" data-category="safari">
+                 <div class="group gallery-item" data-category="safari">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
                         <img src="1.5.jpeg" alt="Mocca Pleated Field Jacket" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Mocca Pleated Field Jacket</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Şehrin ritmine ayak uyduran özgün tasarım."</p>
+                            <p data-lang="prod_desc_5" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Şehrin ritmine ayak uyduran tasarım."</p>
                         </div>
                     </div>
                 </div>
-                <div class="group gallery-item" data-category="safari">
+                 <div class="group gallery-item" data-category="safari">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
                         <img src="1.11.jpeg" alt="Royal Earth Safari Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Royal Earth Safari Takım</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Maceracı ruhun en asil hali."</p>
+                            <p data-lang="prod_desc_6" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Maceracı ruhun en asil hali."</p>
                         </div>
                     </div>
                 </div>
-                <div class="group gallery-item" data-category="takim">
+                 <div class="group gallery-item" data-category="takim">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
                         <img src="1.2.jpeg" alt="Keten Dokulu Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Keten Dokulu Yelekli Takım</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Yaz davetlerinin yıldızı: Doğal keten dokusuyla nefes alan, kusursuz bir asalet."</p>
+                            <p data-lang="prod_desc_7" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Yaz davetlerinin yıldızı."</p>
                         </div>
                     </div>
                 </div>
-                <div class="group gallery-item" data-category="takim">
+                 <div class="group gallery-item" data-category="takim">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
                         <img src="1.3.jpeg" alt="Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Yelekli Takım</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"İtalyan kesimiyle kusursuzlaşan bir asalet."</p>
+                            <p data-lang="prod_desc_8" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"İtalyan kesimiyle kusursuzlaşan asalet."</p>
                         </div>
                     </div>
                 </div>
-                <div class="group gallery-item" data-category="takim">
+                 <div class="group gallery-item" data-category="takim">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
                         <img src="1.12.jpeg" alt="Crystal White Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Crystal White Yelekli Takım</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"En özel gününüze yakışan kusursuz beyazlık."</p>
+                            <p data-lang="prod_desc_9" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"En özel gününüze yakışan beyazlık."</p>
                         </div>
                     </div>
                 </div>
@@ -537,18 +544,18 @@
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Sahara Beige Kısa Kollu Safari</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Kısa kollu tasarımın ferahlatıcı özgürlüğü."</p>
+                            <p data-lang="prod_desc_10" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Ferahlatıcı özgürlük."</p>
                         </div>
                     </div>
                 </div>
-                <div class="group gallery-item" data-category="summer">
+                 <div class="group gallery-item" data-category="summer">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
                         <img src="1.22.jpeg" alt="Latte Brown Yazlık Safari Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Latte Brown Yazlık Safari Takım</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"İtalyan sokaklarının salaş şıklığını üzerinizde taşıyın."</p>
+                            <p data-lang="prod_desc_11" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"İtalyan sokaklarının salaş şıklığı."</p>
                         </div>
                     </div>
                 </div>
@@ -559,7 +566,7 @@
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Toscana Olive Kısa Kollu Ceket</h3>
                             <div class="w-12 h-0.5 bg-hiclass-gold mb-4 transition-all duration-500 group-hover:w-24"></div>
-                            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Roma'da bir gün batımı kadar büyüleyici."</p>
+                            <p data-lang="prod_desc_12" class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">"Roma'da bir gün batımı."</p>
                         </div>
                     </div>
                 </div>
@@ -576,8 +583,8 @@
                     </div>
                     <span class="text-2xl font-serif font-bold text-white tracking-widest">X-HİCLASS</span>
                 </div>
-                <h2 class="text-4xl font-serif text-white mb-6">Randevu Oluşturun</h2>
-                <p class="text-gray-400 mb-10 font-light">
+                <h2 data-lang="contact_title" class="text-4xl font-serif text-white mb-6">Randevu Oluşturun</h2>
+                <p data-lang="contact_desc" class="text-gray-400 mb-10 font-light">
                     Size en uygun stili belirlemek ve özel dikim deneyimini yaşamak için showroom'umuza bekliyoruz.
                 </p>
                 <div class="space-y-6">
@@ -586,7 +593,7 @@
                             <span class="material-symbols-outlined">location_on</span>
                         </div>
                         <div>
-                            <h4 class="text-white font-serif text-lg">Adres</h4>
+                            <h4 data-lang="con_address" class="text-white font-serif text-lg">Adres</h4>
                             <a href="https://www.google.com/maps/search/?api=1&query=Yeni Mah., Cebeci Cad., No:50/54C, Küçükköy, Gaziosmanpaşa" target="_blank" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
                                 Yeni Mah., Cebeci Cad., No:50/54C, Küçükköy, Gaziosmanpaşa
                             </a>
@@ -597,7 +604,7 @@
                             <span class="material-symbols-outlined">call</span>
                         </div>
                         <div>
-                            <h4 class="text-white font-serif text-lg">Telefon</h4>
+                            <h4 data-lang="con_phone" class="text-white font-serif text-lg">Telefon</h4>
                             <a href="tel:+905326929661" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
                                 +90 532 692 96 61
                             </a>
@@ -609,13 +616,13 @@
                             <span class="material-symbols-outlined"><i class="fab fa-whatsapp"></i></span>
                         </div>
                         <div>
-                            <h4 class="text-white font-serif text-lg">WhatsApp</h4>
-                            <a href="https://wa.me/905326929661?text=Websitenizden%20geliyorum%20ve%20bilgi%20almak%20istiyorum." target="_blank" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
+                            <h4 data-lang="con_wa" class="text-white font-serif text-lg">WhatsApp</h4>
+                            <a href="https://wa.me/905326929661?text=Websitenizden%20geliyorum%20ve%20bilgi%20almak%20istiyorum." target="_blank" data-lang="con_wa_link" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
                                 Hızlı Mesaj Gönder
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-start gap-4">
                         <div class="p-3 bg-gray-900 rounded-full text-hiclass-gold border border-gray-800">
                             <span class="material-symbols-outlined">
@@ -623,20 +630,20 @@
                             </span>
                         </div>
                         <div>
-                            <h4 class="text-white font-serif text-lg">Trendyol Mağaza</h4>
-                            <a href="https://ty.gl/o1ugfowditbo6" target="_blank" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
-                                Ürünlerimizi İnceleyin & Satın Almak İçin Tıklayın
+                            <h4 data-lang="con_store" class="text-white font-serif text-lg">Trendyol Mağaza</h4>
+                            <a href="https://ty.gl/o1ugfowditbo6" target="_blank" data-lang="con_store_link" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
+                                Ürünlerimizi İnceleyin & Satın Alın
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-start gap-4">
                         <div class="p-3 bg-gray-900 rounded-full text-hiclass-gold border border-gray-800">
                             <span class="material-symbols-outlined"><i class="fab fa-instagram"></i></span>
                         </div>
                         <div>
                             <h4 class="text-white font-serif text-lg">Instagram</h4>
-                            <a href="https://www.instagram.com/hiclasstekstil?igsh=MWMzbHNhOGhlZmI0aQ==" target="_blank" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
+                            <a href="https://www.instagram.com/hiclasstekstil?igsh=MWMzbHNhOGhlZmI0aQ==" target="_blank" data-lang="con_social_link" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
                                 Bizi Takip Edin
                             </a>
                         </div>
@@ -648,7 +655,7 @@
                         </div>
                         <div>
                             <h4 class="text-white font-serif text-lg">TikTok</h4>
-                            <a href="https://www.tiktok.com/@h.class.tekstil?_r=1&_t=ZS-923R52ravEF" target="_blank" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
+                            <a href="https://www.tiktok.com/@h.class.tekstil?_r=1&_t=ZS-923R52ravEF" target="_blank" data-lang="con_video_link" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
                                 Videolarımızı İzleyin
                             </a>
                         </div>
@@ -659,7 +666,7 @@
                             <span class="material-symbols-outlined">mail</span>
                         </div>
                         <div>
-                            <h4 class="text-white font-serif text-lg">E-posta</h4>
+                            <h4 data-lang="con_email" class="text-white font-serif text-lg">E-posta</h4>
                             <a href="mailto:hiclassmantex@gmail.com" class="text-gray-500 text-sm hover:text-hiclass-gold transition-colors">
                                 hiclassmantex@gmail.com
                             </a>
@@ -676,36 +683,36 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
-                            <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Adınız</label>
-                            <input type="text" name="Ad Soyad" placeholder="İsim Soyisim" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors" required>
+                            <label data-lang="form_name" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Adınız</label>
+                            <input type="text" name="Ad Soyad" data-lang="ph_name" placeholder="İsim Soyisim" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors" required>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Telefon</label>
+                            <label data-lang="form_phone" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Telefon</label>
                             <input type="tel" name="Telefon" placeholder="+90 ..." class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors">
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Konu</label>
-                        <select name="Konu" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors appearance-none" required>
-                            <option>Özel Dikim Randevusu</option>
-                            <option>Koleksiyon Bilgisi</option>
-                            <option>Toptan Satış</option>
-                            <option>Diğer</option>
+                        <label data-lang="form_subject" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Konu</label>
+                        <select id="formSubjectSelect" name="Konu" class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors appearance-none" required>
+                            <option data-lang="opt_1">Özel Dikim Randevusu</option>
+                            <option data-lang="opt_2">Koleksiyon Bilgisi</option>
+                            <option data-lang="opt_3">Toptan Satış</option>
+                            <option data-lang="opt_4">Diğer</option>
                         </select>
                     </div>
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Mesajınız</label>
-                        <textarea name="Mesaj" rows="4" placeholder="Bize iletmek istedikleriniz..." class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors" required></textarea>
+                        <label data-lang="form_msg" class="text-xs uppercase tracking-widest text-hiclass-gold ml-1">Mesajınız</label>
+                        <textarea name="Mesaj" rows="4" data-lang="ph_msg" placeholder="Bize iletmek istedikleriniz..." class="w-full bg-black border border-gray-700 p-4 text-white focus:border-hiclass-gold outline-none transition-colors" required></textarea>
                     </div>
                     <button type="submit" class="w-full py-4 bg-hiclass-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300">
-                        Gönder
+                        <span data-lang="form_send">Gönder</span>
                     </button>
                 </form>
             </div>
         </div>
 
         <div class="container mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-600 text-xs">© 2025 Hiclass Tekstil. Tüm hakları saklıdır.</p>
+            <p data-lang="footer_copy" class="text-gray-600 text-xs">© 2025 Hiclass Tekstil. Tüm hakları saklıdır.</p>
             <div class="flex gap-4 mt-4 md:mt-0">
                 <a href="https://www.google.com/maps/search/?api=1&query=Yeni Mah., Cebeci Cad., No:50/54C, Küçükköy, Gaziosmanpaşa" target="_blank" class="text-gray-600 hover:text-hiclass-gold transition-colors">
                     <span class="material-symbols-outlined">public</span>
@@ -724,7 +731,6 @@
     </section>
 
     <script>
-        // Loader Logic
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => {
@@ -733,7 +739,6 @@
             }, 1000);
         });
 
-        // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -745,7 +750,6 @@
             }
         });
 
-        // Mobile Menu Toggle
         const mobileMenu = document.getElementById('mobile-menu');
         function toggleMobileMenu() {
             if (mobileMenu.classList.contains('translate-x-full')) {
@@ -755,79 +759,81 @@
             }
         }
 
-        // Texture Explorer Logic
         const textures = {
             'baskethopsack': {
                 src: "Basket Hopsack 2.jpeg",
-                title: 'Basket Hopsack',
-                desc: '<b>İçerik:</b> %55 Polyester (Dayanıklılık), %40 Viskon (Yumuşaklık ve parlaklık), %5 Elastan (Esneklik).<br><br><b>Görünüm:</b> Kendinden desenli olduğu için hem spor hem klasik kombinlenebilir. Düz renk olsa bile üzerindeki doku sayesinde "zengin" durur.<br><br><b>Gramaj (190 gr/m²):</b> İnce ve hafiftir. Tam bir yazlık ceket (Blazer) veya Gömlek-Ceket kumaşıdır.'
+                title_tr: 'Basket Hopsack', title_en: 'Basket Hopsack',
+                desc_tr: '<b>İçerik:</b> %55 Polyester (Dayanıklılık), %40 Viskon (Yumuşaklık ve parlaklık), %5 Elastan (Esneklik).<br><br><b>Görünüm:</b> Kendinden desenli olduğu için hem spor hem klasik kombinlenebilir.<br><br><b>Gramaj (190 gr/m²):</b> İnce ve hafiftir. Tam bir yazlık ceket kumaşıdır.',
+                desc_en: '<b>Content:</b> 55% Polyester (Durability), 40% Viscose (Softness and shine), 5% Elastane (Flexibility).<br><br><b>Appearance:</b> Can be combined with both sports and classic styles due to its self-pattern.<br><br><b>Weight (190 gr/m²):</b> Thin and light. A perfect summer jacket fabric.'
             },
             'chino': {
                 src: "Chino 2.jpeg",
-                title: 'Chino',
-                desc: '<b>İçerik:</b> %63 Polyester (Dayanıklı, renk atmaz), %33 Viskon (Yumuşak tuşe), %4 Elastan (Yüksek esneklik).<br><br><b>Gramaj (210 gr/m²):</b> Bu gramaj "Mevsimlik" sınıfına girer. Ne çok kalın ne çok incedir. 4 mevsim giyilebilir (belki çok soğuk kış günleri hariç).'
+                title_tr: 'Chino', title_en: 'Chino',
+                desc_tr: '<b>İçerik:</b> %63 Polyester (Dayanıklı, renk atmaz), %33 Viskon (Yumuşak tuşe), %4 Elastan (Yüksek esneklik).<br><br><b>Gramaj (210 gr/m²):</b> Bu gramaj "Mevsimlik" sınıfına girer. Ne çok kalın ne çok incedir. 4 mevsim giyilebilir.',
+                desc_en: '<b>Content:</b> 63% Polyester (Durable, colorfast), 33% Viscose (Soft touch), 4% Elastane (High flexibility).<br><br><b>Weight (210 gr/m²):</b> This weight falls into the "Seasonal" class. Neither too thick nor too thin. Wearable in 4 seasons.'
             },
             'ekose': {
                 src: "Ekose 2.jpeg",
-                title: 'Ekose',
-                desc: '<b>İçerik ve Dayanıklılık:</b> %100 Polyester.<br><br><b>Avantajı:</b> Asla kırışmaz, çok dayanıklıdır, rengi solmaz ve yıllarca giyilebilir (Kurumsal kıyafetler veya okul formaları için çok tercih edilir).<br><br><b>Gramaj (240 gr/m²):</b> Orta kalınlıkta bir kumaştır. Yılın 3 mevsiminde rahatlıkla tercih edilebilir.'
+                title_tr: 'Ekose', title_en: 'Plaid (Ekose)',
+                desc_tr: '<b>İçerik ve Dayanıklılık:</b> %100 Polyester.<br><br><b>Avantajı:</b> Asla kırışmaz, çok dayanıklıdır, rengi solmaz ve yıllarca giyilebilir.<br><br><b>Gramaj (240 gr/m²):</b> Orta kalınlıkta bir kumaştır.',
+                desc_en: '<b>Content and Durability:</b> 100% Polyester.<br><br><b>Advantage:</b> Never wrinkles, very durable, does not fade and can be worn for years.<br><br><b>Weight (240 gr/m²):</b> A medium thickness fabric.'
             },
             'gabardin': {
                 src: "Gabardin 2.jpeg", 
-                title: 'Gabardin',
-                desc: '<b>İçerik:</b> %50 Polyester, %40 Viskon %10 Elastan.<br><br><b>Görünüm:</b> Genelde pantolonlarda %2-3 likra olur. %10 likra demek, bu kumaşın inanılmaz esnek ve rahat olduğu anlamına gelir.<br><br><b>Gramaj (290 gr/m²):</b> Bu gramaj, "tok" bir kumaş olduğunu gösterir. İç göstermez, vücut hatlarını belli etmez ve dökümlü durur. Tam bir Sonbahar/Kış veya Mevsimlik Pantolon/Ceket kumaşıdır.'
+                title_tr: 'Gabardin', title_en: 'Gabardine',
+                desc_tr: '<b>İçerik:</b> %50 Polyester, %40 Viskon %10 Elastan.<br><br><b>Görünüm:</b> %10 likra demek, bu kumaşın inanılmaz esnek ve rahat olduğu anlamına gelir.<br><br><b>Gramaj (290 gr/m²):</b> "Tok" bir kumaştır. İç göstermez, dökümlü durur.',
+                desc_en: '<b>Content:</b> 50% Polyester, 40% Viscose 10% Elastane.<br><br><b>Appearance:</b> 10% lycra means this fabric is incredibly flexible and comfortable.<br><br><b>Weight (290 gr/m²):</b> A "substantial" fabric. Does not show through, drapes well.'
             },
             'linenblend': {
                  src: "Linen Blend 2.jpeg",
-                 title: 'Linen Blend',
-                 desc: '<b>İçerik:</b> %15 Keten, %28 Viskon, %55 Polyester, %2 Elastan.<br><br><b>Görünüm:</b> Ketenin doğal dokusu ile modern şıklığı birleştirir.<br><br><b>Gramaj (200 gr/m²):</b> İnce ve hafiftir. Tam bir yazlık ceket veya gömlek-ceket kumaşıdır.'
+                 title_tr: 'Linen Blend', title_en: 'Linen Blend',
+                 desc_tr: '<b>İçerik:</b> %15 Keten, %28 Viskon, %55 Polyester, %2 Elastan.<br><br><b>Görünüm:</b> Ketenin doğal dokusu ile modern şıklığı birleştirir.<br><br><b>Gramaj (200 gr/m²):</b> İnce ve hafiftir. Yazlık ceket için idealdir.',
+                 desc_en: '<b>Content:</b> 15% Linen, 28% Viscose, 55% Polyester, 2% Elastane.<br><br><b>Appearance:</b> Combines the natural texture of linen with modern elegance.<br><br><b>Weight (200 gr/m²):</b> Thin and light. Ideal for a summer jacket.'
             },
              'linenlook': {
                  src: "Linen Look 2.jpeg",
-                 title: 'Linen Look',
-                 desc: '<b>İçerik:</b> Saf keten görünümüne sahip ancak bakımı çok daha kolaydır.<br><br><b>Avantajı:</b> Keten kadar çabuk kırışmaz, ütü tutar ve formunu korur.<br><br><b>Gramajı (180 gr/m²):</b> Çok kalın değil, gömlekten kalın ama monttan incedir. Bu nedenle ince yazlık ceketlik (blazer) veya gömlek-ceket (shacket) kumaşı olarak geçer.'
+                 title_tr: 'Linen Look', title_en: 'Linen Look',
+                 desc_tr: '<b>İçerik:</b> Saf keten görünümüne sahip ancak bakımı çok daha kolaydır.<br><br><b>Avantajı:</b> Keten kadar çabuk kırışmaz, ütü tutar.<br><br><b>Gramajı (180 gr/m²):</b> Gömlekten kalın, monttan incedir.',
+                 desc_en: '<b>Content:</b> Has the look of pure linen but is much easier to care for.<br><br><b>Advantage:</b> Does not wrinkle as quickly as linen, holds iron.<br><br><b>Weight (180 gr/m²):</b> Thicker than a shirt, thinner than a coat.'
             },
              'pinstripe': {
                  src: "Pinstripe 2.jpeg",
-                 title: 'Pinstripe',
-                 desc: '<b>İçerik:</b> %64 Polyester, %33 Viskon, %3 Elastan.<br><br><b>Hissiyatı:</b>Polyester dayanıklılık verir, viskon yumuşaklık katar, elastan ise esneklik sağlar. Yani hem takım elbise gibi şık durur hem de eşofman kadar rahat hissettirir.<br><br><b>Kullanım:</b> Resmi toplantılar ve ciddi organizasyonlar için mükemmeldir.'
+                 title_tr: 'Pinstripe', title_en: 'Pinstripe',
+                 desc_tr: '<b>İçerik:</b> %64 Polyester, %33 Viskon, %3 Elastan.<br><br><b>Hissiyatı:</b> Hem takım elbise gibi şık durur hem de eşofman kadar rahat hissettirir.<br><br><b>Kullanım:</b> Resmi toplantılar için mükemmeldir.',
+                 desc_en: '<b>Content:</b> 64% Polyester, 33% Viscose, 3% Elastane.<br><br><b>Feel:</b> Looks stylish like a suit but feels comfortable like sweatpants.<br><br><b>Usage:</b> Perfect for formal meetings.'
             },
              'tweedlook': {
                  src: "Tweed Look 2.jpeg",
-                 title: 'Tweed Look',
-                 desc: '<b>İçerik:</b>%35 Viskon (Yumuşaklık verir), %61 Polyester (Dayanıklılık verir), %4 Elastan (Likra/Esneklik verir).<br><br><b>Görünüm:</b> İçinde elastan olduğu için hafif esnek ve rahattır.<br><br><b>Gramajı:</b> Kışlık/Mevsimlik ceket için ideal dolgunluktadır.'
+                 title_tr: 'Tweed Look', title_en: 'Tweed Look',
+                 desc_tr: '<b>İçerik:</b> %35 Viskon, %61 Polyester, %4 Elastan.<br><br><b>Görünüm:</b> Hafif esnek ve rahattır.<br><br><b>Gramajı:</b> Kışlık/Mevsimlik ceket için ideal dolgunluktadır.',
+                 desc_en: '<b>Content:</b> 35% Viscose, 61% Polyester, 4% Elastane.<br><br><b>Appearance:</b> Slightly flexible and comfortable.<br><br><b>Weight:</b> Ideal fullness for a Winter/Seasonal jacket.'
             }
         };
 
+        let currentTextureType = 'baskethopsack'; 
+
         function changeTexture(type) {
+            currentTextureType = type;
             const img = document.getElementById('main-texture-img');
             const title = document.getElementById('texture-title');
             const desc = document.getElementById('texture-desc');
 
-            // Fade out
             img.style.opacity = '0';
             
             setTimeout(() => {
                 if(textures[type]) {
                     img.src = textures[type].src;
-                    title.innerText = textures[type].title;
-                    
-                    // DİKKAT: Burayı 'innerText' yerine 'innerHTML' yaptık.
-                    // Böylece <b> ve <br> etiketleri kod olarak değil, biçim olarak görünür.
-                    desc.innerHTML = textures[type].desc; 
-                    
-                    // Fade in
+                    title.innerText = currentLang === 'tr' ? textures[type].title_tr : textures[type].title_en;
+                    desc.innerHTML = currentLang === 'tr' ? textures[type].desc_tr : textures[type].desc_en;
                     img.style.opacity = '1';
                 }
             }, 500);
         }
 
-        // Gallery Filter Logic
         function filterGallery(category, btn) {
             const items = document.querySelectorAll('.gallery-item');
             const buttons = document.querySelectorAll('#koleksiyon button');
 
-            // Update Active Button Style
             buttons.forEach(b => {
                 b.classList.remove('border-hiclass-gold', 'text-hiclass-gold');
                 b.classList.add('text-gray-400', 'border-gray-700');
@@ -839,7 +845,6 @@
             items.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
                     item.style.display = 'block';
-                    // Trigger reflow for animation if needed, but simple display toggle works
                     setTimeout(() => item.style.opacity = '1', 10);
                 } else {
                     item.style.display = 'none';
@@ -848,46 +853,36 @@
             });
         }
 
-        // --- 3 MODLU BEDEN HESAPLAYICI ---
+        let currentLang = "tr";
 
-        // TAB GEÇİŞ FONKSİYONU
         function openTab(tabName) {
-            // 1. Tüm içerikleri gizle
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.add('hidden'));
-            
-            // 2. Seçilen içeriği göster
             document.getElementById(tabName).classList.remove('hidden');
 
-            // 3. Buton stillerini güncelle
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('text-hiclass-gold', 'border-hiclass-gold', 'bg-white/5');
                 btn.classList.add('text-gray-500', 'border-transparent');
             });
 
-            // Tıklanan butonu aktif yap (Event target ile buluyoruz)
             event.currentTarget.classList.remove('text-gray-500', 'border-transparent');
             event.currentTarget.classList.add('text-hiclass-gold', 'border-hiclass-gold', 'bg-white/5');
         }
 
-        // VERİ TABLOLARI (Görselden alınan veriler)
-        
-        // 1. Matris (Boy/Kilo)
         const sizeMatrix = [
-            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60], // 165
-            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60], // 170
-            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60], // 175
-            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60], // 180
-            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58], // 185
-            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58], // 190
-            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58], // 195
-            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58]  // 200
+            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60],
+            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60],
+            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60],
+            [46, 46, 46, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58, 60],
+            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58],
+            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58],
+            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58],
+            [46, 46, 46, 48, 48, 48, 48, 50, 52, 54, 54, 56, 56, 58]
         ];
         const heightSteps = [165, 170, 175, 180, 185, 190, 195, 200];
         const weightSteps = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115];
 
-        // 2. Ceket Verileri (N-CTIY)
         const jacketData = [
             { size: 46, back: 72.5, arm: 63, chest: 44 },
             { size: 48, back: 73.5, arm: 64, chest: 46 },
@@ -898,7 +893,6 @@
             { size: 58, back: 77.5, arm: 68, chest: 56 }
         ];
 
-        // 3. Pantolon Verileri
         const pantData = [
             { jacketSize: 46, pantSize: 40, waist: 42, hem: 19.5, outseam: 107.5 },
             { jacketSize: 48, pantSize: 42, waist: 44, hem: 20,   outseam: 108 },
@@ -909,14 +903,108 @@
             { jacketSize: 58, pantSize: 52, waist: 54, hem: 21.5, outseam: 110.5 }
         ];
 
-        // HESAPLAMA FONKSİYONLARI
+        const translations = {
+            tr: {
+                nav_collection: "Koleksiyon", nav_fabrics: "Kumaşlar", nav_size: "Bedenini Bul", nav_about: "Hakkımızda", nav_contact: "İletişim",
+                hero_subtitle: "Exclusive Men's Wear", hero_title_1: "Zarafetin", hero_title_2: "Dokusu", hero_desc: "X-Hiclass Tekstil ile kaliteyi teninizde hissedin. Modern çizgiler, geleneksel ustalık ve altın dokunuşlar.",
+                btn_discover: "Koleksiyonu Keşfet", btn_story: "Hikayemiz",
+                about_small: "Hakkımızda", about_title: "Mükemmelliği<br>İlmek İlmek İşliyoruz", about_text: "X-Hiclass Tekstil olarak, sadece kumaş üretmiyor, bir yaşam tarzı tasarlıyoruz. İstanbul'un kalbindeki atölyemizde, geleneksel terzilik sanatını modern teknolojiyle buluşturuyoruz. Siyahın asaleti ve altının ihtişamıyla bezenmiş özel koleksiyonlarımız, stil sahibi beyefendiler için özenle hazırlanıyor.",
+                about_list_1: "Birinci sınıf İtalyan ve yerli kumaşlar", about_list_2: "Kişiye özel ölçü ve tasarım seçenekleri", about_list_3: "Usta el işçiliği ve detaylara verilen önem", years_exp: "Yıllık Tecrübe",
+                fabric_small: "Materyal", fabric_title: "Kumaşın Hissiyatı", hint_select: "Seçim yapın",
+                calc_small: "Size Guide", calc_title: "İdeal Bedenini Bul", calc_desc: "Size en uygun hesaplama yöntemini seçin.",
+                tab_general: "Boy / Kilo", tab_jacket: "Ceket Ölçüsü", tab_pant: "Pantolon Ölçüsü",
+                lbl_height: "Boyunuz (CM)", lbl_weight: "Kilonuz (KG)", btn_calc: "Hesapla", res_suit_size: "Önerilen Takım Elbise Bedeni",
+                lbl_back: "Arka Orta Boy (cm)", lbl_arm: "Kol Boyu (cm)", lbl_chest: "Göğüs (cm)", btn_calc_jacket: "Ceket Bedenini Bul", res_best_jacket: "Ölçülerinize En Uygun Ceket Bedeni", res_note_jacket: "* N-CTIY kalıplarına göre hesaplanmıştır.",
+                lbl_waist: "Bel (1/2) (cm)", lbl_hem: "Paça (1/2) (cm)", lbl_outseam: "Dış Boy (cm)", btn_calc_pant: "Pantolon Bedenini Bul", res_pant_size: "Pantolon Bedeni", res_ref_jacket: "Denk Gelen Ceket",
+                cat_small: "Katalog", cat_title: "Özel Koleksiyonlar",
+                filter_all: "Tümü", filter_safari: "Safari Serisi", filter_suit: "Yelekli Takım", filter_business: "Business", filter_summer: "Summer",
+                prod_desc_1: "\"Otoritenin ve zamansız şıklığın zirvesi.\"",
+                prod_desc_2: "\"Kruvaze kesimin heybeti, çizgilerin fit gösteren illüzyonu.\"",
+                prod_desc_3: "\"Sözcüklerden daha güçlü bir duruş.\"",
+                prod_desc_4: "\"Klasik şıklığın en sofistike ve modern yorumu.\"",
+                prod_desc_5: "\"Şehrin ritmine ayak uyduran özgün tasarım.\"",
+                prod_desc_6: "\"Maceracı ruhun en asil hali.\"",
+                prod_desc_7: "\"Yaz davetlerinin yıldızı: Doğal keten dokusuyla nefes alan, kusursuz bir asalet.\"",
+                prod_desc_8: "\"İtalyan kesimiyle kusursuzlaşan bir asalet.\"",
+                prod_desc_9: "\"En özel gününüze yakışan kusursuz beyazlık.\"",
+                prod_desc_10: "\"Kısa kollu tasarımın ferahlatıcı özgürlüğü.\"",
+                prod_desc_11: "\"İtalyan sokaklarının salaş şıklığını üzerinizde taşıyın.\"",
+                prod_desc_12: "\"Roma'da bir gün batımı kadar büyüleyici.\"",
+                contact_title: "Randevu Oluşturun", contact_desc: "Size en uygun stili belirlemek ve özel dikim deneyimini yaşamak için showroom'umuza bekliyoruz.",
+                con_address: "Adres", con_phone: "Telefon", con_email: "E-posta", con_store: "Trendyol Mağaza", con_store_link: "Ürünlerimizi İnceleyin & Satın Alın", con_wa: "WhatsApp", con_wa_link: "Hızlı Mesaj Gönder", con_social_link: "Bizi Takip Edin", con_video_link: "Videolarımızı İzleyin",
+                form_name: "Adınız", form_phone: "Telefon", form_subject: "Konu", form_msg: "Mesajınız", form_send: "Gönder",
+                opt_1: "Özel Dikim Randevusu", opt_2: "Koleksiyon Bilgisi", opt_3: "Toptan Satış", opt_4: "Diğer",
+                footer_copy: "© 2025 Hiclass Tekstil. Tüm hakları saklıdır.",
+                ph_height: "Örn: 175", ph_weight: "Örn: 75", ph_ex: "Örn: 73.5", ph_ex2: "Örn: 64", ph_ex3: "Örn: 46", ph_ex4: "Örn: 44", ph_ex5: "Örn: 20", ph_ex6: "Örn: 108", ph_name: "İsim Soyisim", ph_msg: "Bize iletmek istedikleriniz..."
+            },
+            en: {
+                nav_collection: "Collection", nav_fabrics: "Fabrics", nav_size: "Find Size", nav_about: "About Us", nav_contact: "Contact",
+                hero_subtitle: "Exclusive Men's Wear", hero_title_1: "Texture of", hero_title_2: "Elegance", hero_desc: "Feel the quality on your skin with X-Hiclass Textile. Modern lines, traditional craftsmanship, and golden touches.",
+                btn_discover: "Discover Collection", btn_story: "Our Story",
+                about_small: "About Us", about_title: "We Weave<br>Perfection Knot by Knot", about_text: "As X-Hiclass Textile, we don't just produce fabric, we design a lifestyle. We combine traditional tailoring art with modern technology in our atelier in the heart of Istanbul. Our exclusive collections, adorned with the nobility of black and the magnificence of gold, are carefully prepared for stylish gentlemen.",
+                about_list_1: "Premium Italian and domestic fabrics", about_list_2: "Custom size and design options", about_list_3: "Master craftsmanship and attention to detail", years_exp: "Years Experience",
+                fabric_small: "Material", fabric_title: "Feel the Fabric", hint_select: "Select fabric",
+                calc_small: "Size Guide", calc_title: "Find Your Ideal Size", calc_desc: "Choose the calculation method that suits you best.",
+                tab_general: "Height / Weight", tab_jacket: "Jacket Size", tab_pant: "Trouser Size",
+                lbl_height: "Height (CM)", lbl_weight: "Weight (KG)", btn_calc: "Calculate", res_suit_size: "Recommended Suit Size",
+                lbl_back: "Center Back Length (cm)", lbl_arm: "Sleeve Length (cm)", lbl_chest: "Chest (cm)", btn_calc_jacket: "Find Jacket Size", res_best_jacket: "Best Jacket Size for You", res_note_jacket: "* Calculated based on N-CTIY patterns.",
+                lbl_waist: "Waist (1/2) (cm)", lbl_hem: "Leg Opening (1/2) (cm)", lbl_outseam: "Outseam (cm)", btn_calc_pant: "Find Trouser Size", res_pant_size: "Trouser Size", res_ref_jacket: "Equivalent Jacket",
+                cat_small: "Catalog", cat_title: "Exclusive Collections",
+                filter_all: "All", filter_safari: "Safari Series", filter_suit: "Vested Suit", filter_business: "Business", filter_summer: "Summer",
+                prod_desc_1: "\"The pinnacle of authority and timeless elegance.\"",
+                prod_desc_2: "\"The majesty of the double-breasted cut, the fit illusion of stripes.\"",
+                prod_desc_3: "\"A stance stronger than words.\"",
+                prod_desc_4: "\"The most sophisticated and modern interpretation of classic elegance.\"",
+                prod_desc_5: "\"Original design keeping up with the rhythm of the city.\"",
+                prod_desc_6: "\"The noblest form of the adventurous spirit.\"",
+                prod_desc_7: "\"Star of summer invitations: Breathing natural linen texture, perfect nobility.\"",
+                prod_desc_8: "\"Nobility perfected with Italian cut.\"",
+                prod_desc_9: "\"Flawless whiteness worthy of your most special day.\"",
+                prod_desc_10: "\"Refreshing freedom of short sleeve design.\"",
+                prod_desc_11: "\"Carry the shabby chic of Italian streets on you.\"",
+                prod_desc_12: "\"As fascinating as a sunset in Rome.\"",
+                contact_title: "Make an Appointment", contact_desc: "We are waiting for you in our showroom to determine the style that suits you best and experience custom tailoring.",
+                con_address: "Address", con_phone: "Phone", con_email: "E-mail", con_store: "Trendyol Store", con_store_link: "View Products & Buy Now", con_wa: "WhatsApp", con_wa_link: "Send Quick Message", con_social_link: "Follow Us", con_video_link: "Watch Our Videos",
+                form_name: "Full Name", form_phone: "Phone", form_subject: "Subject", form_msg: "Message", form_send: "Send",
+                opt_1: "Custom Tailoring Appointment", opt_2: "Collection Information", opt_3: "Wholesale", opt_4: "Other",
+                footer_copy: "© 2025 Hiclass Textile. All rights reserved.",
+                ph_height: "Ex: 175", ph_weight: "Ex: 75", ph_ex: "Ex: 73.5", ph_ex2: "Ex: 64", ph_ex3: "Ex: 46", ph_ex4: "Ex: 44", ph_ex5: "Ex: 20", ph_ex6: "Ex: 108", ph_name: "Name Surname", ph_msg: "What you want to tell us..."
+            }
+        };
 
-        // 1. Genel (Boy/Kilo) Hesaplama
+        function toggleLanguage() {
+            currentLang = currentLang === "tr" ? "en" : "tr";
+            
+            const langTexts = document.querySelectorAll('.lang-text');
+            langTexts.forEach(el => {
+                el.innerText = currentLang === "tr" ? "EN" : "TR";
+            });
+            
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[currentLang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[currentLang][key];
+                    } else if (element.tagName === 'OPTION') {
+                        element.innerText = translations[currentLang][key];
+                    } else {
+                        element.innerHTML = translations[currentLang][key];
+                    }
+                }
+            });
+
+            changeTexture(currentTextureType);
+        }
+
         function calculateGeneral() {
             const h = parseFloat(document.getElementById('inputHeight').value);
             const w = parseFloat(document.getElementById('inputWeight').value);
             
-            if(!h || !w) return alert("Lütfen boy ve kilonuzu giriniz.");
+            if(!h || !w) {
+                const msg = currentLang === 'tr' ? "Lütfen boy ve kilonuzu giriniz." : "Please enter your height and weight.";
+                return alert(msg);
+            }
 
             let hIndex = 0, minH = Infinity;
             heightSteps.forEach((val, idx) => {
@@ -935,22 +1023,21 @@
             document.getElementById('resultGeneral').classList.remove('hidden');
         }
 
-        // 2. Ceket Hesaplama (En Yakın Değeri Bulma Algoritması)
         function calculateJacket() {
             const back = parseFloat(document.getElementById('jacketBack').value);
             const arm = parseFloat(document.getElementById('jacketArm').value);
             const chest = parseFloat(document.getElementById('jacketChest').value);
 
-            if(!back || !arm || !chest) return alert("Lütfen tüm ceket ölçülerini giriniz.");
+            if(!back || !arm || !chest) {
+                const msg = currentLang === 'tr' ? "Lütfen tüm ceket ölçülerini giriniz." : "Please enter all jacket measurements.";
+                return alert(msg);
+            }
 
             let bestSize = 46;
             let minError = Infinity;
 
             jacketData.forEach(item => {
-                // Her bedenin verileriyle girilen veriler arasındaki farkı topluyoruz (Mutlak Değer)
-                // Göğüs ölçüsü (chest) fit için daha önemli olduğu için onu 2 ile çarpıp ağırlıklandırıyoruz.
                 const error = Math.abs(item.back - back) + Math.abs(item.arm - arm) + (Math.abs(item.chest - chest) * 1.5);
-                
                 if (error < minError) {
                     minError = error;
                     bestSize = item.size;
@@ -961,22 +1048,22 @@
             document.getElementById('resultJacket').classList.remove('hidden');
         }
 
-        // 3. Pantolon Hesaplama
         function calculatePant() {
             const waist = parseFloat(document.getElementById('pantWaist').value);
             const hem = parseFloat(document.getElementById('pantHem').value);
             const outseam = parseFloat(document.getElementById('pantOutseam').value);
 
-            if(!waist || !hem || !outseam) return alert("Lütfen tüm pantolon ölçülerini giriniz.");
+            if(!waist || !hem || !outseam) {
+                const msg = currentLang === 'tr' ? "Lütfen tüm pantolon ölçülerini giriniz." : "Please enter all trouser measurements.";
+                return alert(msg);
+            }
 
             let bestPantSize = 40;
             let jacketRef = 46;
             let minError = Infinity;
 
             pantData.forEach(item => {
-                // Bel ölçüsü (waist) en kritik ölçü olduğu için 2 ile çarpıp ağırlık veriyoruz.
                 const error = (Math.abs(item.waist - waist) * 2) + Math.abs(item.hem - hem) + Math.abs(item.outseam - outseam);
-                
                 if (error < minError) {
                     minError = error;
                     bestPantSize = item.pantSize;
