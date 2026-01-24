@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQTC4FX85T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GQTC4FX85T');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQTC4FX85T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GQTC4FX85T');
+    </script>
     <title>X-Hiclass Tekstil | Zarafetin Ve Kalitenin Adresi</title>
     <meta name="description" content="Hiclass Tekstil olarak kaliteli kumaşlar ve modern tasarımlarla hizmetinizdeyiz.">
     <meta property="og:title" content="Hiclass Tekstil">
@@ -23,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
     <script>
         tailwind.config = {
             theme: {
@@ -198,7 +196,9 @@
                         <h2 data-lang="about_title" class="text-4xl md:text-5xl font-serif text-white leading-tight">Mükemmelliği<br>İlmek İlmek İşliyoruz</h2>
                     </div>
                     <p data-lang="about_text" class="text-gray-400 leading-relaxed font-light text-lg">
-                        X-Hiclass Tekstil olarak, sadece kumaş üretmiyor, bir yaşam tarzı tasarlıyoruz. İstanbul'un kalbindeki atölyemizde, geleneksel terzilik sanatını modern teknolojiyle buluşturuyoruz. Siyahın asaleti ve altının ihtişamıyla bezenmiş özel koleksiyonlarımız, stil sahibi beyefendiler için özenle hazırlanıyor.
+                        <b>On İki Yılı Aşan Bir Tutku: 13.02.2014’ten Geleceğe</b><br><br>
+                        2014 yılının Şubat ayında, bir kumaşın karakterini değiştirecek ilk dikişi attığımızda tek bir amacımız vardı: Erkeğin özgüvenini üzerine dikmek. 13.02.2014’te kurulan fabrikamız, bugün on iki yılı aşan tecrübesiyle sadece takım elbise değil; bir duruş, bir kimlik ve bir ustalık hikayesi üretiyor.<br><br>
+                        Geleneksel terzilik ruhunu modern üretim teknolojisiyle birleştirerek, her dikişte titizliği, her kesimde ise mükemmelliği hedefliyoruz. On iki yılı aşkın süredir olduğu gibi, bugün de her bedene uyum sağlayan kusursuz silüetler tasarlamaya devam ediyoruz.
                     </p>
                     <ul class="space-y-4 mt-4">
                         <li class="flex items-center gap-4">
@@ -215,11 +215,30 @@
                         </li>
                     </ul>
                 </div>
-                <div class="relative h-[600px] w-full group perspective">
+                
+                <div class="relative h-[400px] md:h-[600px] w-full group perspective">
                     <div class="absolute inset-0 bg-hiclass-gold transform translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
-                    <img src="HİCLASS2.png" alt="Ustalık" class="absolute inset-0 w-full h-full object-cover shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 grayscale group-hover:grayscale-0">
-                    <div class="absolute bottom-0 left-0 m-4 md:m-0 md:bottom-10 md:-left-10 bg-black p-4 md:p-6 border border-hiclass-gold/30 shadow-xl z-20">
-                        <p class="text-hiclass-gold font-serif text-3xl md:text-4xl font-bold">10+</p>
+                    
+                    <div class="absolute inset-0 w-full h-full shadow-2xl border border-gray-800 bg-black overflow-hidden relative">
+                         <video 
+                            id="promoVideo"
+                            class="w-full h-full object-cover" 
+                            autoplay 
+                            muted 
+                            loop 
+                            playsinline>
+                            <source src="Hiclasstanıtım.mp4" type="video/mp4">
+                            Tarayıcınız bu videoyu desteklemiyor.
+                        </video>
+
+                        <button onclick="toggleMute()" class="absolute bottom-4 right-4 z-50 bg-black/60 hover:bg-hiclass-gold text-white hover:text-black border border-gray-600 hover:border-transparent rounded-full p-3 transition-all duration-300 flex items-center justify-center cursor-pointer">
+                            <span id="iconMuted" class="material-symbols-outlined block">volume_off</span>
+                            <span id="iconUnmuted" class="material-symbols-outlined hidden">volume_up</span>
+                        </button>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 m-4 md:m-0 md:bottom-10 md:-left-10 bg-black p-4 md:p-6 border border-hiclass-gold/30 shadow-xl z-50 pointer-events-none">
+                        <p class="text-hiclass-gold font-serif text-3xl md:text-4xl font-bold">12+</p>
                         <p data-lang="years_exp" class="text-gray-400 text-[10px] md:text-xs uppercase tracking-widest mt-1">Yıllık Tecrübe</p>
                     </div>
                 </div>
@@ -241,7 +260,7 @@
                     
                     <button onclick="changeTexture('baskethopsack')" class="texture-btn relative h-24 lg:h-1/6 overflow-hidden border border-gray-800 hover:border-hiclass-gold transition-all duration-300 text-left p-3 md:p-6 group">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors z-10"></div>
-                        <img src="Basket Hopsack 1.webp" alt="İpek" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="Basket Hopsack 1.webp" alt="İpek" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="relative z-20 h-full flex flex-col justify-end">
                             <h4 class="text-sm md:text-xl font-serif text-white group-hover:text-hiclass-gold">Basket Hopsack</h4>
                         </div>
@@ -249,7 +268,7 @@
 
                     <button onclick="changeTexture('chino')" class="texture-btn relative h-24 lg:h-1/6 overflow-hidden border border-gray-800 hover:border-hiclass-gold transition-all duration-300 text-left p-3 md:p-6 group">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors z-10"></div>
-                        <img src="Chino 1.webp" alt="Kadife" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="Chino 1.webp" alt="Kadife" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="relative z-20 h-full flex flex-col justify-end">
                             <h4 class="text-sm md:text-xl font-serif text-white group-hover:text-hiclass-gold">Chino</h4>
                         </div>
@@ -257,7 +276,7 @@
 
                     <button onclick="changeTexture('ekose')" class="texture-btn relative h-24 lg:h-1/6 overflow-hidden border border-gray-800 hover:border-hiclass-gold transition-all duration-300 text-left p-3 md:p-6 group">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors z-10"></div>
-                        <img src="Ekose 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="Ekose 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="relative z-20 h-full flex flex-col justify-end">
                             <h4 class="text-sm md:text-xl font-serif text-white group-hover:text-hiclass-gold">Ekose</h4>
                         </div>
@@ -265,7 +284,7 @@
 
                     <button onclick="changeTexture('gabardin')" class="texture-btn relative h-24 lg:h-1/6 overflow-hidden border border-gray-800 hover:border-hiclass-gold transition-all duration-300 text-left p-3 md:p-6 group">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors z-10"></div>
-                        <img src="Gabardin 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="Gabardin 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="relative z-20 h-full flex flex-col justify-end">
                             <h4 class="text-sm md:text-xl font-serif text-white group-hover:text-hiclass-gold">Gabardin</h4>
                         </div>
@@ -273,7 +292,7 @@
 
                     <button onclick="changeTexture('linenblend')" class="texture-btn relative h-24 lg:h-1/6 overflow-hidden border border-gray-800 hover:border-hiclass-gold transition-all duration-300 text-left p-3 md:p-6 group">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors z-10"></div>
-                        <img src="Linen Blend 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="Linen Blend 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="relative z-20 h-full flex flex-col justify-end">
                             <h4 class="text-sm md:text-xl font-serif text-white group-hover:text-hiclass-gold">Linen Blend</h4>
                         </div>
@@ -281,7 +300,7 @@
 
                     <button onclick="changeTexture('linenlook')" class="texture-btn relative h-24 lg:h-1/6 overflow-hidden border border-gray-800 hover:border-hiclass-gold transition-all duration-300 text-left p-3 md:p-6 group">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors z-10"></div>
-                        <img src="Linen Look 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="Linen Look 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="relative z-20 h-full flex flex-col justify-end">
                             <h4 class="text-sm md:text-xl font-serif text-white group-hover:text-hiclass-gold">Linen Look</h4>
                         </div>
@@ -289,7 +308,7 @@
 
                     <button onclick="changeTexture('pinstripe')" class="texture-btn relative h-24 lg:h-1/6 overflow-hidden border border-gray-800 hover:border-hiclass-gold transition-all duration-300 text-left p-3 md:p-6 group">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors z-10"></div>
-                        <img src="Pinstripe 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="Pinstripe 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="relative z-20 h-full flex flex-col justify-end">
                             <h4 class="text-sm md:text-xl font-serif text-white group-hover:text-hiclass-gold">Pinstripe</h4>
                         </div>
@@ -297,7 +316,7 @@
 
                     <button onclick="changeTexture('tweedlook')" class="texture-btn relative h-24 lg:h-1/6 overflow-hidden border border-gray-800 hover:border-hiclass-gold transition-all duration-300 text-left p-3 md:p-6 group">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors z-10"></div>
-                        <img src="Tweed Look 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="Tweed Look 1.webp" alt="Yün" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="relative z-20 h-full flex flex-col justify-end">
                             <h4 class="text-sm md:text-xl font-serif text-white group-hover:text-hiclass-gold">Tweed Look</h4>
                         </div>
@@ -453,7 +472,7 @@
             <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group gallery-item" data-category="business">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.4.webp" alt="Executive Black Trio Suit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.4.webp" alt="Executive Black Trio Suit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Executive Black Trio Suit</h3>
@@ -464,7 +483,7 @@
                 </div>
                 <div class="group gallery-item" data-category="business">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.6.webp" alt="İtalyan Pinstripe Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.6.webp" alt="İtalyan Pinstripe Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">İtalyan Pinstripe Takım</h3>
@@ -475,7 +494,7 @@
                 </div>
                  <div class="group gallery-item" data-category="business">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.7.webp" alt="Executive Charcoal Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.7.webp" alt="Executive Charcoal Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Executive Charcoal Takım</h3>
@@ -486,7 +505,7 @@
                 </div>
                 <div class="group gallery-item" data-category="safari">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.1.webp" alt="Kemerli İtalyan Blazer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.1.webp" alt="Kemerli İtalyan Blazer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Kemerli İtalyan Blazer</h3>
@@ -497,7 +516,7 @@
                 </div>
                  <div class="group gallery-item" data-category="safari">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.5.webp" alt="Mocca Pleated Field Jacket" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.5.webp" alt="Mocca Pleated Field Jacket" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Mocca Pleated Field Jacket</h3>
@@ -508,7 +527,7 @@
                 </div>
                  <div class="group gallery-item" data-category="safari">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.11.webp" alt="Royal Earth Safari Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.11.webp" alt="Royal Earth Safari Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Royal Earth Safari Takım</h3>
@@ -519,7 +538,7 @@
                 </div>
                  <div class="group gallery-item" data-category="takim">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.2.webp" alt="Keten Dokulu Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.2.webp" alt="Keten Dokulu Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Keten Dokulu Yelekli Takım</h3>
@@ -530,7 +549,7 @@
                 </div>
                  <div class="group gallery-item" data-category="takim">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.3.webp" alt="Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.3.webp" alt="Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Yelekli Takım</h3>
@@ -541,7 +560,7 @@
                 </div>
                  <div class="group gallery-item" data-category="takim">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.12.webp" alt="Crystal White Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.12.webp" alt="Crystal White Yelekli Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Crystal White Yelekli Takım</h3>
@@ -552,7 +571,7 @@
                 </div>
                 <div class="group gallery-item" data-category="summer">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.21.webp" alt="Sahara Beige Kısa Kollu Safari" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.21.webp" alt="Sahara Beige Kısa Kollu Safari" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Sahara Beige Kısa Kollu Safari</h3>
@@ -563,7 +582,7 @@
                 </div>
                  <div class="group gallery-item" data-category="summer">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.22.webp" alt="Latte Brown Yazlık Safari Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.22.webp" alt="Latte Brown Yazlık Safari Takım" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Latte Brown Yazlık Safari Takım</h3>
@@ -574,7 +593,7 @@
                 </div>
                 <div class="group gallery-item" data-category="summer">
                     <div class="relative overflow-hidden h-[500px] border border-gray-800">
-                        <img src="1.23.webp" alt="Toscana Olive Kısa Kollu Ceket" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                        <img src="1.23.webp" alt="Toscana Olive Kısa Kollu Ceket" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
                         <div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                             <h3 class="text-2xl font-serif text-white mb-2">Toscana Olive Kısa Kollu Ceket</h3>
@@ -772,6 +791,24 @@
             }
         }
 
+        // --- VIDEO SES KONTROLÜ ---
+        function toggleMute() {
+            const video = document.getElementById('promoVideo');
+            const iconMuted = document.getElementById('iconMuted');
+            const iconUnmuted = document.getElementById('iconUnmuted');
+
+            if (video.muted) {
+                video.muted = false; // Sesi Aç
+                iconMuted.classList.add('hidden'); // Çarpı ikonunu gizle
+                iconUnmuted.classList.remove('hidden'); // Ses ikonunu göster
+            } else {
+                video.muted = true; // Sesi Kapat
+                iconMuted.classList.remove('hidden'); // Çarpı ikonunu göster
+                iconUnmuted.classList.add('hidden'); // Ses ikonunu gizle
+            }
+        }
+
+        // --- MULTI-LANGUAGE TEXTURE DATA ---
         const textures = {
             'baskethopsack': {
                 src: "Basket Hopsack 2.webp",
@@ -921,7 +958,7 @@
                 nav_collection: "Koleksiyon", nav_fabrics: "Kumaşlar", nav_size: "Bedenini Bul", nav_about: "Hakkımızda", nav_contact: "İletişim",
                 hero_subtitle: "Exclusive Men's Wear", hero_title_1: "Zarafetin", hero_title_2: "Dokusu", hero_desc: "X-Hiclass Tekstil ile kaliteyi teninizde hissedin. Modern çizgiler, geleneksel ustalık ve altın dokunuşlar.",
                 btn_discover: "Koleksiyonu Keşfet", btn_story: "Hikayemiz",
-                about_small: "Hakkımızda", about_title: "Mükemmelliği<br>İlmek İlmek İşliyoruz", about_text: "X-Hiclass Tekstil olarak, sadece kumaş üretmiyor, bir yaşam tarzı tasarlıyoruz. İstanbul'un kalbindeki atölyemizde, geleneksel terzilik sanatını modern teknolojiyle buluşturuyoruz. Siyahın asaleti ve altının ihtişamıyla bezenmiş özel koleksiyonlarımız, stil sahibi beyefendiler için özenle hazırlanıyor.",
+                about_small: "Hakkımızda", about_title: "Mükemmelliği<br>İlmek İlmek İşliyoruz", about_text: "<b>On İki Yılı Aşan Bir Tutku: 13.02.2014’ten Geleceğe</b><br><br> 2014 yılının Şubat ayında, bir kumaşın karakterini değiştirecek ilk dikişi attığımızda tek bir amacımız vardı: Erkeğin özgüvenini üzerine dikmek. 13.02.2014’te kurulan fabrikamız, bugün on iki yılı aşan tecrübesiyle sadece takım elbise değil; bir duruş, bir kimlik ve bir ustalık hikayesi üretiyor.<br><br> Geleneksel terzilik ruhunu modern üretim teknolojisiyle birleştirerek, her dikişte titizliği, her kesimde ise mükemmelliği hedefliyoruz. On iki yılı aşkın süredir olduğu gibi, bugün de her bedene uyum sağlayan kusursuz silüetler tasarlamaya devam ediyoruz.",
                 about_list_1: "Birinci sınıf İtalyan ve yerli kumaşlar", about_list_2: "Kişiye özel ölçü ve tasarım seçenekleri", about_list_3: "Usta el işçiliği ve detaylara verilen önem", years_exp: "Yıllık Tecrübe",
                 fabric_small: "Materyal", fabric_title: "Kumaşın Hissiyatı", hint_select: "Seçim yapın",
                 calc_small: "Size Guide", calc_title: "İdeal Bedenini Bul", calc_desc: "Size en uygun hesaplama yöntemini seçin.",
@@ -948,13 +985,14 @@
                 form_name: "Adınız", form_phone: "Telefon", form_subject: "Konu", form_msg: "Mesajınız", form_send: "Gönder",
                 opt_1: "Özel Dikim Randevusu", opt_2: "Koleksiyon Bilgisi", opt_3: "Toptan Satış", opt_4: "Diğer",
                 footer_copy: "© 2026 Hiclass Tekstil. Tüm hakları saklıdır.",
+                // Placeholders (Attributes cannot be set via innerHTML, need JS handling)
                 ph_height: "Örn: 175", ph_weight: "Örn: 75", ph_ex: "Örn: 73.5", ph_ex2: "Örn: 64", ph_ex3: "Örn: 46", ph_ex4: "Örn: 44", ph_ex5: "Örn: 20", ph_ex6: "Örn: 108", ph_name: "İsim Soyisim", ph_msg: "Bize iletmek istedikleriniz..."
             },
             en: {
                 nav_collection: "Collection", nav_fabrics: "Fabrics", nav_size: "Find Size", nav_about: "About Us", nav_contact: "Contact",
                 hero_subtitle: "Exclusive Men's Wear", hero_title_1: "Texture of", hero_title_2: "Elegance", hero_desc: "Feel the quality on your skin with X-Hiclass Textile. Modern lines, traditional craftsmanship, and golden touches.",
                 btn_discover: "Discover Collection", btn_story: "Our Story",
-                about_small: "About Us", about_title: "We Weave<br>Perfection Knot by Knot", about_text: "As X-Hiclass Textile, we don't just produce fabric, we design a lifestyle. We combine traditional tailoring art with modern technology in our atelier in the heart of Istanbul. Our exclusive collections, adorned with the nobility of black and the magnificence of gold, are carefully prepared for stylish gentlemen.",
+                about_small: "About Us", about_title: "We Weave<br>Perfection Knot by Knot", about_text: "<b>A Passion Spanning Over Twelve Years: From February 13, 2014 to the Future</b><br><br> In February 2014, when we made the first stitch that would change the character of a fabric, we had only one goal: to sew a man's self-confidence onto him. Our factory, established on February 13, 2014, with over twelve years of experience, produces not only suits but also a story of posture, identity, and craftsmanship.<br><br> By combining the spirit of traditional tailoring with modern production technology, we aim for meticulousness in every stitch and perfection in every cut. As we have done for over twelve years, we continue to design flawless silhouettes that suit every body type.",
                 about_list_1: "Premium Italian and domestic fabrics", about_list_2: "Custom size and design options", about_list_3: "Master craftsmanship and attention to detail", years_exp: "Years Experience",
                 fabric_small: "Material", fabric_title: "Feel the Fabric", hint_select: "Select fabric",
                 calc_small: "Size Guide", calc_title: "Find Your Ideal Size", calc_desc: "Choose the calculation method that suits you best.",
@@ -981,6 +1019,7 @@
                 form_name: "Full Name", form_phone: "Phone", form_subject: "Subject", form_msg: "Message", form_send: "Send",
                 opt_1: "Custom Tailoring Appointment", opt_2: "Collection Information", opt_3: "Wholesale", opt_4: "Other",
                 footer_copy: "© 2026 Hiclass Textile. All rights reserved.",
+                // Placeholders
                 ph_height: "Ex: 175", ph_weight: "Ex: 75", ph_ex: "Ex: 73.5", ph_ex2: "Ex: 64", ph_ex3: "Ex: 46", ph_ex4: "Ex: 44", ph_ex5: "Ex: 20", ph_ex6: "Ex: 108", ph_name: "Name Surname", ph_msg: "What you want to tell us..."
             }
         };
@@ -988,15 +1027,18 @@
         function toggleLanguage() {
             currentLang = currentLang === "tr" ? "en" : "tr";
             
+            // Update all button texts
             const langTexts = document.querySelectorAll('.lang-text');
             langTexts.forEach(el => {
                 el.innerText = currentLang === "tr" ? "EN" : "TR";
             });
             
+            // Update Text Content
             const elements = document.querySelectorAll('[data-lang]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-lang');
                 if (translations[currentLang][key]) {
+                    // Check if it's an input to update placeholder instead of innerHTML
                     if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                         element.placeholder = translations[currentLang][key];
                     } else if (element.tagName === 'OPTION') {
@@ -1007,6 +1049,7 @@
                 }
             });
 
+            // Update Currently Displayed Texture Info (Refresh)
             changeTexture(currentTextureType);
         }
 
@@ -1089,37 +1132,36 @@
             document.getElementById('resultPant').classList.remove('hidden');
         }
     </script>
+        
     <a href="https://wa.me/905326929661" class="whatsapp-button" target="_blank">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-<style>
-  .whatsapp-button {
-    z-index: 9999 !important;
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 35px; /* İkon boyutu */
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  }
+    <style>
+      .whatsapp-button {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 35px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
 
-  .whatsapp-button:hover {
-    transform: scale(1.1); /* Üzerine gelince hafif büyür */
-    color: white;
-  }
-</style>
-
+      .whatsapp-button:hover {
+        transform: scale(1.1);
+        color: white;
+      }
+    </style>
 </body>
 </html>
